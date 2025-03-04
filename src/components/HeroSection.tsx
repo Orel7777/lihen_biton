@@ -12,7 +12,7 @@ export const HeroSection = ({ heroRef, scrollToContact }: HeroSectionProps) => {
     <section ref={heroRef} className="relative h-[90vh] flex items-center justify-center text-white">
       <div className="absolute inset-0">
         <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover">
-          <source src="/public/lovable-uploads/video.mp4" type="video/mp4" />
+          <source src="/lovable-uploads/video.mp4" type="video/mp4" />
           The dream home
         </video>
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
