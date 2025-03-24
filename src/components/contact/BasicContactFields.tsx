@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -23,7 +22,7 @@ export const BasicContactFields: React.FC<BasicContactFieldsProps> = ({ form }) 
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="שם מלא" 
               />
             </FormControl>
@@ -42,7 +41,7 @@ export const BasicContactFields: React.FC<BasicContactFieldsProps> = ({ form }) 
               <Input 
                 {...field} 
                 type="tel" 
-                className={`text-right ${form.formState.errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="טלפון נייד" 
               />
             </FormControl>
@@ -61,7 +60,7 @@ export const BasicContactFields: React.FC<BasicContactFieldsProps> = ({ form }) 
               <Input 
                 {...field} 
                 type="email" 
-                className={`text-right ${form.formState.errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="אימייל" 
               />
             </FormControl>
@@ -79,7 +78,7 @@ export const BasicContactFields: React.FC<BasicContactFieldsProps> = ({ form }) 
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.currentLocation ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.currentLocation ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="מקום מגורים עדכני" 
               />
             </FormControl>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -22,7 +21,7 @@ export const LandlordFields: React.FC<LandlordFieldsProps> = ({ form }) => {
             <FormControl>
               <Textarea 
                 {...field} 
-                className={`text-right min-h-[100px] ${form.formState.errors.propertyDetails ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right min-h-[100px] bg-white text-[#000000] ${form.formState.errors.propertyDetails ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="פרט את הנכס - מספר חדרים, קומה, מעלית, חניה וכו׳" 
               />
             </FormControl>
@@ -40,7 +39,7 @@ export const LandlordFields: React.FC<LandlordFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.propertyType ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.propertyType ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="דירה, פנטהאוז, בית פרטי, וכו׳" 
               />
             </FormControl>
@@ -58,8 +57,44 @@ export const LandlordFields: React.FC<LandlordFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.availableDate ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.availableDate ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="מיידי, 1/5/2024, גמיש" 
+              />
+            </FormControl>
+            <FormMessage className="text-right" />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="rentAmount"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>סכום שכירות מבוקש</FormLabel>
+            <FormControl>
+              <Input 
+                {...field} 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.rentAmount ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="סכום שכירות מבוקש" 
+              />
+            </FormControl>
+            <FormMessage className="text-right" />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="availableFrom"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>זמין מ-</FormLabel>
+            <FormControl>
+              <Input 
+                {...field} 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.availableFrom ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="זמין מ-" 
               />
             </FormControl>
             <FormMessage className="text-right" />

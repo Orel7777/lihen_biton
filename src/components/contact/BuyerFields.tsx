@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -23,7 +22,7 @@ export const BuyerFields: React.FC<BuyerFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.beforeSale ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] placeholder:text-[#000000] ${form.formState.errors.beforeSale ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="ספר לנו על המצב הנוכחי" 
               />
             </FormControl>
@@ -41,7 +40,7 @@ export const BuyerFields: React.FC<BuyerFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.soldProperty ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] placeholder:text-[#000000] ${form.formState.errors.soldProperty ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="ספר לנו על המכירה" 
               />
             </FormControl>
@@ -76,7 +75,7 @@ export const BuyerFields: React.FC<BuyerFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.seenProperties ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] placeholder:text-[#000000] ${form.formState.errors.seenProperties ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="ספר לנו על הנכסים שראיתם" 
               />
             </FormControl>
@@ -94,7 +93,7 @@ export const BuyerFields: React.FC<BuyerFieldsProps> = ({ form }) => {
             <FormControl>
               <Textarea 
                 {...field} 
-                className={`text-right min-h-[100px] ${form.formState.errors.propertyInterest ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right min-h-[100px] bg-white text-[#000000] placeholder:text-[#000000] ${form.formState.errors.propertyInterest ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="תאר את הנכס המבוקש" 
               />
             </FormControl>

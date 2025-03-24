@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -22,7 +21,7 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
             <FormControl>
               <Textarea 
                 {...field} 
-                className={`text-right min-h-[100px] ${form.formState.errors.propertyDescription ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right min-h-[100px] bg-white text-[#000000] ${form.formState.errors.propertyDescription ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="תאר את מפרט הנכס למכירה (חדרים, שטח, קומה וכו')" 
               />
             </FormControl>
@@ -40,7 +39,7 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.askingPrice ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.askingPrice ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 
               />
             </FormControl>
@@ -58,8 +57,44 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.propertyAddress ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
-                placeholder="הכנס את כתובת הנכס" 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.propertyAddress ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="כתובת מלאה" 
+              />
+            </FormControl>
+            <FormMessage className="text-right" />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="propertyType"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>סוג הנכס</FormLabel>
+            <FormControl>
+              <Input 
+                {...field} 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.propertyType ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="דירה, פנטהאוז, בית פרטי, וכו׳" 
+              />
+            </FormControl>
+            <FormMessage className="text-right" />
+          </FormItem>
+        )}
+      />
+
+      <FormField
+        control={form.control}
+        name="propertyPrice"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>מחיר מכירה מבוקש</FormLabel>
+            <FormControl>
+              <Input 
+                {...field} 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.propertyPrice ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="מחיר מכירה מבוקש" 
               />
             </FormControl>
             <FormMessage className="text-right" />

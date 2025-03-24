@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -22,7 +21,7 @@ export const TenantFields: React.FC<TenantFieldsProps> = ({ form }) => {
             <FormControl>
               <Textarea 
                 {...field} 
-                className={`text-right min-h-[100px] ${form.formState.errors.propertySpecs ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                className={`text-right min-h-[100px] bg-white text-[#000000] ${form.formState.errors.propertySpecs ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="פרט את דרישותיך - מספר חדרים, מיקום מועדף, קומה, מעלית וכו׳" 
               />
             </FormControl>
@@ -40,8 +39,8 @@ export const TenantFields: React.FC<TenantFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.moveInDate ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
-                placeholder="לדוגמא: 1/12/2023, חודש הבא, גמיש" 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.moveInDate ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="מתי תרצה להיכנס לנכס?" 
               />
             </FormControl>
             <FormMessage className="text-right" />
@@ -58,8 +57,8 @@ export const TenantFields: React.FC<TenantFieldsProps> = ({ form }) => {
             <FormControl>
               <Input 
                 {...field} 
-                className={`text-right ${form.formState.errors.estimatedBudget ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
-                placeholder="טווח תקציב משוער בש״ח" 
+                className={`text-right bg-white text-[#000000] ${form.formState.errors.estimatedBudget ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
+                placeholder="מה התקציב שלך?" 
               />
             </FormControl>
             <FormMessage className="text-right" />

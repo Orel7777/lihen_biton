@@ -4,8 +4,6 @@ import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { Alert } from "@/components/ui/alert";
-import { CircleCheck } from "lucide-react";
 import { contactFormSchema, ContactFormData } from "@/schemas/contactFormSchema";
 import { BasicContactFields } from "@/components/contact/BasicContactFields";
 import { BuyerFields } from "@/components/contact/BuyerFields";
@@ -13,6 +11,7 @@ import { TenantFields } from "@/components/contact/TenantFields";
 import { LandlordFields } from "@/components/contact/LandlordFields";
 import { SaleFields } from "@/components/contact/SaleFields";
 import { SuccessDialog } from "@/components/contact/SuccessDialog";
+import { SuccessAlert } from "@/components/contact/SuccessAlert";
 import { submitForm } from "@/components/contact/formSubmit";
 
 export const ContactForm = () => {
@@ -50,8 +49,7 @@ export const ContactForm = () => {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const response = await submitForm(data);
-      console.log("FormSubmit Response:", response);
+      await submitForm(data);
 
       // שמירת הנתונים שנשלחו
       setSubmittedData(data);
@@ -91,13 +89,7 @@ export const ContactForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 animate-fade-up">
           {showSuccessAlert && (
-            <Alert 
-              variant="success" 
-              className="mb-4 text-emerald-600 border-emerald-500/50"
-              icon={<CircleCheck className="text-emerald-500" size={16} strokeWidth={2} />}
-            >
-              <p className="text-sm">הטופס נשלח בהצלחה ניצור איתך קשר בהקדם</p>
-            </Alert>
+            <SuccessAlert onDismiss={() => setShowSuccessAlert(false)} />
           )}
           
           <BasicContactFields form={form} />
