@@ -29,8 +29,8 @@ export const SuccessDialog: React.FC<SuccessDialogProps> = ({
         </DialogHeader>
         
         <div className="space-y-4 py-4">
-          <p className="text-sm text-gray-700">תודה שפנית אלינו, נחזור אליך בהקדם האפשרי!</p>
-          <p className="text-sm text-gray-700">הודעה נשלחה למייל: lihenb84@gmail.com</p>
+          <p className="text-sm text-white">תודה שפנית אלינו, נחזור אליך בהקדם האפשרי!</p>
+          <p className="text-sm text-white">הודעה נשלחה למייל: lihenb84@gmail.com</p>
           
           <div className="bg-gray-50 p-4 rounded-md border border-gray-100 space-y-2">
             <p className="text-sm font-semibold">פרטי הפנייה:</p>
@@ -83,7 +83,7 @@ export const SuccessDialog: React.FC<SuccessDialogProps> = ({
           </div>
         </div>
         
-        <Button onClick={() => onOpenChange(false)} className="w-full">
+        <Button onClick={() => onOpenChange(false)} className="w-full text-white">
           סגור
         </Button>
       </DialogContent>

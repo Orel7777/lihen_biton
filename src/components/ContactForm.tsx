@@ -89,7 +89,10 @@ export const ContactForm = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 animate-fade-up">
           {showSuccessAlert && (
-            <SuccessAlert onDismiss={() => setShowSuccessAlert(false)} />
+            <SuccessAlert
+              isOpen={showSuccessAlert}
+              onClose={() => setShowSuccessAlert(false)}
+            />
           )}
           
           <BasicContactFields form={form} />
