@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 51 81% 52%;
+    --card: 0 0% 0%;
+    --card-foreground: 51 81% 52%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 51 81% 52%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 51 81% 52%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 51 81% 52%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 51 81% 52%;
+    --input: 51 81% 52%;
+    --ring: 51 81% 52%;
+    --radius: 0.5rem;
+    
+    /* Rainbow Button Colors */
+    --color-1: 51 81% 52%;
+    --color-2: 51 81% 52%;
+    --color-3: 51 81% 52%;
+    --color-4: 51 81% 52%;
+    --color-5: 51 81% 52%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration) linear infinite;
+}
