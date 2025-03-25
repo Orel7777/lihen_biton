@@ -80,14 +80,26 @@ export const AboutSection = () => {
         }} transition={{
           duration: 0.8
         }} className="space-y-6 text-right mb-20">
-            <p className="leading-relaxed">כשאתם מחפשים מתווכת, אתם רוצים מישהי שיודעת לנהל משא ומתן, שמכירה את השוק לעומק ושתלווה אתכם בכל שלב – אבל מה אם תקבלו גם הרבה מעבר? 
-אני כאן כדי להפוך את הדרך שלכם לקנייה, מכירה או השכרה של נכס לחוויה בטוחה, מקצועית ומדויקת. עם ניסיון, ידע, ואהבה אמיתית לאנשים ולנדל"ן, אני דואגת לכל הפרטים הגדולים והקטנים, כדי שתוכלו להרגיש רגועים ובטוחים שאתם בידיים הכי טובות.</p>
+            <p className="leading-relaxed text-xl font-medium mb-6">מחפשים לקנות, למכור או להשכיר נכס? אני כאן כדי להפוך את זה לקל, מהיר ורווחי עבורכם!</p>
             
-            <p className="leading-relaxed"></p>
+            <p className="leading-relaxed mb-8">אני מלווה אתכם אישית לאורך כל הדרך, עם דגש על כל הפרטים הקטנים, כדי שתוכלו להיות רגועים ולדעת שהעסקה שלכם בידיים הנכונות.</p>
             
-            <p className="font-medium text-lg">בין אם אתם מחפשים דירה חדשה, רוצים למכור נכס או מתלבטים לגבי השקעה – אני כאן עבורכם, בכל שאלה ובכל שלב. כי נדל&quot;ן עושים עם מומחים, אבל חוויית שירות אמיתית מקבלים רק ממי שבאמת רואה אתכם.
-
-אשת הנדל"ן שלך – והרבה מעבר!</p>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3">
+                <span className="text-[#D4AF37] text-2xl">✨</span>
+                <p className="font-medium">התאמה מושלמת לנכס שמתאים בדיוק לכם</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[#D4AF37] text-2xl">✨</span>
+                <p className="font-medium">שירות אמין, מקצועי וללא פשרות</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[#D4AF37] text-2xl">✨</span>
+                <p className="font-medium">ניהול מו"מ חכם שיבטיח לכם את העסקה הטובה ביותר</p>
+              </div>
+            </div>
+            
+            <p className="font-medium text-lg text-[#D4AF37]">אל תשאירו את העסקה שלכם ליד המזל – בואו נדבר ונמצא לכם את הנכס או הקונה המושלם!</p>
           </motion.div>
 
           <div className="w-full max-w-5xl mx-auto">
