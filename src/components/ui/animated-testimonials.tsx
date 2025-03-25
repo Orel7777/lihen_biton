@@ -4,7 +4,7 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 type Testimonial = {
   quote: string;
@@ -103,9 +103,10 @@ export const AnimatedTestimonials = ({
 
       <Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
         <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
-          <img 
-            src={testimonials[active].src} 
-            alt={testimonials[active].name} 
+          <DialogTitle className="sr-only">תצוגת תמונת המלצה</DialogTitle>
+          <img
+            src={testimonials[active].src}
+            alt={testimonials[active].name}
             className="w-full h-auto max-h-[90vh] object-contain"
           />
         </DialogContent>

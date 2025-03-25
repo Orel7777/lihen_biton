@@ -17,7 +17,7 @@ export const TenantFields: React.FC<TenantFieldsProps> = ({ form }) => {
         name="propertySpecs"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>מפרט הנכס המבוקש</FormLabel>
+            <FormLabel>מפרט הנכס המבוקש:</FormLabel>
             <FormControl>
               <Textarea 
                 {...field} 
@@ -35,10 +35,11 @@ export const TenantFields: React.FC<TenantFieldsProps> = ({ form }) => {
         name="moveInDate"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>תאריך כניסה מבוקש</FormLabel>
+            <FormLabel>תאריך כניסה מבוקש:</FormLabel>
             <FormControl>
               <Input 
                 {...field} 
+                type="date"
                 className={`text-right bg-white text-[#000000] ${form.formState.errors.moveInDate ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="מתי תרצה להיכנס לנכס?" 
               />
@@ -53,10 +54,12 @@ export const TenantFields: React.FC<TenantFieldsProps> = ({ form }) => {
         name="estimatedBudget"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>תקציב משוער</FormLabel>
+            <FormLabel>תקציב משוער:</FormLabel>
             <FormControl>
               <Input 
                 {...field} 
+                type="number"
+                min="0"
                 className={`text-right bg-white text-[#000000] ${form.formState.errors.estimatedBudget ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="מה התקציב שלך?" 
               />

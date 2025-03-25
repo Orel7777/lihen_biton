@@ -5,29 +5,25 @@ const FORM_ENDPOINT = "https://formsubmit.co/lihenb84@gmail.com";
 
 export const submitForm = async (data: ContactFormData): Promise<void> => {
   try {
-    // Create a hidden form
+    // יצירת טופס HTML רגיל
     const form = document.createElement('form');
     form.method = 'POST';
     form.action = FORM_ENDPOINT;
     form.style.display = 'none';
 
-    // הוספת שדות נסתרים לקונפיגורציה של FormSubmit
+    // הגדרות FormSubmit
     const configFields = {
+      ...data,
       _subject: `פנייה חדשה מ-${data.name}`,
       _template: 'box',
       _captcha: 'false',
       _next: window.location.href,
-      _autoresponse: "תודה על פנייתך! קיבלנו את ההודעה ונחזור אליך בהקדם."
+      _autoresponse: "תודה על פנייתך! קיבלנו את ההודעה ונחזור אליך בהקדם.",
+      _replyto: data.email || '',
     };
 
-    // הוספת שדות הטופס
-    const formFields = {
-      ...data,
-      ...configFields
-    };
-
-    // יצירת שדות נסתרים עבור כל המידע
-    Object.entries(formFields).forEach(([key, value]) => {
+    // יצירת שדות הטופס
+    Object.entries(configFields).forEach(([key, value]) => {
       if (value !== undefined && value !== '') {
         const input = document.createElement('input');
         input.type = 'hidden';
@@ -37,10 +33,14 @@ export const submitForm = async (data: ContactFormData): Promise<void> => {
       }
     });
 
-    // Submit the form
+    // הוספת הטופס לדף ושליחה
     document.body.appendChild(form);
     form.submit();
-    document.body.removeChild(form);
+    
+    // מחיקת הטופס אחרי שנייה
+    setTimeout(() => {
+      document.body.removeChild(form);
+    }, 1000);
 
   } catch (error) {
     console.error('Error in submitForm:', error);

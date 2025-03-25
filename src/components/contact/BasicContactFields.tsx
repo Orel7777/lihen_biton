@@ -41,6 +41,8 @@ export const BasicContactFields: React.FC<BasicContactFieldsProps> = ({ form }) 
               <Input 
                 {...field} 
                 type="tel" 
+                pattern="^05\d{8}$"
+                inputMode="numeric"
                 className={`text-right bg-white text-[#000000] ${form.formState.errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="טלפון נייד" 
               />

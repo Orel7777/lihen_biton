@@ -17,7 +17,7 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
         name="propertyDescription"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>מפרט הנכס</FormLabel>
+            <FormLabel>מפרט הנכס:</FormLabel>
             <FormControl>
               <Textarea 
                 {...field} 
@@ -53,7 +53,7 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
         name="propertyAddress"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>כתובת הנכס</FormLabel>
+            <FormLabel>כתובת הנכס:</FormLabel>
             <FormControl>
               <Input 
                 {...field} 
@@ -71,7 +71,7 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
         name="propertyType"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>סוג הנכס</FormLabel>
+            <FormLabel>סוג הנכס:</FormLabel>
             <FormControl>
               <Input 
                 {...field} 
@@ -89,10 +89,12 @@ export const SaleFields: React.FC<SaleFieldsProps> = ({ form }) => {
         name="propertyPrice"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>מחיר מכירה מבוקש</FormLabel>
+            <FormLabel>מחיר מכירה מבוקש:</FormLabel>
             <FormControl>
               <Input 
                 {...field} 
+                type="number"
+                min="0"
                 className={`text-right bg-white text-[#000000] ${form.formState.errors.propertyPrice ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                 placeholder="מחיר מכירה מבוקש" 
               />

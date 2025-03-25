@@ -1,4 +1,3 @@
-
 import { z } from "zod";
 
 export const contactFormSchema = z.object({
@@ -24,7 +23,10 @@ export const contactFormSchema = z.object({
   // Sale specific fields
   propertyDescription: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal('')),
   askingPrice: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal('')),
-  propertyAddress: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal(''))
+  propertyAddress: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal('')),
+  rentAmount: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal('')),
+  propertyPrice: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal('')),
+  availableFrom: z.string().min(1, "יש למלא שדה זה").optional().or(z.literal(''))
 }).superRefine((data, ctx) => {
   // Make all buyer-specific fields required if interestType is "buy"
   if (data.interestType === "buy") {

@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useState } from "react";
 
 interface PropertyCardProps {
@@ -64,6 +64,7 @@ export const PropertyCard = ({
 
       <Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
         <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
+          <DialogTitle className="sr-only">תצוגת תמונה</DialogTitle>
           <img 
             src={image} 
             alt={title} 

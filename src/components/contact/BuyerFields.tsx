@@ -89,7 +89,7 @@ export const BuyerFields: React.FC<BuyerFieldsProps> = ({ form }) => {
         name="propertyInterest"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>תאר את הנכס שאתה מחפש</FormLabel>
+            <FormLabel>תאר את הנכס שאתה מחפש:</FormLabel>
             <FormControl>
               <Textarea 
                 {...field} 

@@ -42,42 +42,45 @@ export const ContactForm = () => {
       availableDate: "",
       propertyDescription: "",
       askingPrice: "",
-      propertyAddress: ""
+      propertyAddress: "",
+      rentAmount: "",
+      propertyPrice: "",
+      availableFrom: ""
     }
   });
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
+    
+    // שמירת הנתונים שנשלחו
+    setSubmittedData(data);
+    
+    // הצגת חלון הצלחה במרכז המסך
+    setShowSuccessDialog(true);
+    
+    // הצגת הודעת הצלחה
+    setShowSuccessAlert(true);
+    
+    toast({
+      title: "הודעה נשלחה בהצלחה",
+      description: "נחזור אליך בהקדם האפשרי"
+    });
+    
+    form.reset();
+    
+    // הסתרת ההודעה לאחר 5 שניות
+    setTimeout(() => {
+      setShowSuccessAlert(false);
+    }, 5000);
+
     try {
       await submitForm(data);
-
-      // שמירת הנתונים שנשלחו
-      setSubmittedData(data);
-      
-      // הצגת חלון הצלחה במרכז המסך
-      setShowSuccessDialog(true);
-      
-      // הצגת הודעת הצלחה
-      setShowSuccessAlert(true);
-      
-      toast({
-        title: "הודעה נשלחה בהצלחה",
-        description: "נחזור אליך בהקדם האפשרי"
-      });
-      
-      form.reset();
-      
-      // הסתרת ההודעה לאחר 5 שניות
-      setTimeout(() => {
-        setShowSuccessAlert(false);
-      }, 5000);
-      
     } catch (error) {
       console.error('Error submitting form:', error);
       toast({
         variant: "destructive",
         title: "שגיאה בשליחת הטופס",
-        description: "אנא נסו שוב מאוחר יותר או צרו קשר ישירות בטלפון"
+        description: "הטופס נשלח אבל ייתכן שהייתה בעיה. אנא צרו קשר בטלפון אם לא נחזור אליכם בקרוב"
       });
     } finally {
       setIsSubmitting(false);
