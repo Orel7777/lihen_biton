@@ -17,7 +17,7 @@ export const AboutSection = () => {
     quote: " טוב אז אחרי חיפושים של כמה חודשים טובים לדירה שכל כך רצינו, דיברנו ונפגשנו עם כמה מתווכים עד שהגענו לליחן המדהימה ,אני ממש רוצה להמליץ על מתווכת שנתנה את כל כולה,דאגה לבדוק כל דבר שביקשנו ,הייתה זמינה לכל שאלה ושיחה,נעימה ,עומדת בזמנים ,בקיצור מי שמחפש מתווכת All-In שבאמת עושה את העבודה מכל הלב תדברו עם ליחן ביטון 0505150002."
   }];
   return <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#000000] to-[#D4AF37] opacity-90" />
+      <div className="absolute inset-0 bg-gradient-to-bl from-[#000000] via-[#000000] to-[#D4AF37] opacity-90" />
       
       {/* Real Estate Background Elements */}
       <div className="absolute inset-0 opacity-30">
